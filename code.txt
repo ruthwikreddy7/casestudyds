@@ -1,17 +1,26 @@
+(#ALL ABOUT DATA)
 View(data$age)
 str(data)
 summary(data$smoker)
 summary(data$age)
-hist(data$age,col="red")
-
-hist(data$bmi)
-hist(data,col="green")
+#checking the type of variables
+classs(data)
+class(data$age)
+class(data$bmi)
+class(data$sex)
+class(data$children)
+class(data$smoker)
+class(data$region)
+#CHECKING NO OF ROWS AND COLOUMNS
+nrow(data)
+ncol(data)
+...............................................
 head(data)
 str(data)
-hist(data$charges,col="darkcyan")
-head(data)
+
 #shape of dataset
 dim(data)
+.............
 #type of data
 str(data)
 is.null(data$age)
@@ -20,6 +29,8 @@ is.null(data$bmi)
 is.null(data$children)
 is.null(data$smoker)
 is.null(data$region)
+.........................................
+#removing string variables
 data2 <- data[,-2]
 data2
 str(data2)
@@ -33,6 +44,12 @@ fdataset <- dataset[!duplicated(dataset),]
 str(fdataset)
 #checking weather null values in dataset
 is.null(fdataset)
+#checking weather it contains NA values
+is.na(data)
+............................................................
+#CONVERTING STRING TO INTEGER COLOUMNS
+data_frame_col3 <- transform(data, data$sex = as.numeric(as.factor(data$sex)))
+.............................................................
 #histogram
 hist(fdataset$age,col="green")
 hist(fdataset$bmi,col="cyan")
